@@ -27,11 +27,11 @@ function Disconnect-ExchangeServer {
 
     Process {
         Try {
-            Get-PSSession -Name $SessionName -ErrorAction Stop
+            $Null = Get-PSSession -Name $SessionName -ErrorAction Stop
         }
         Catch {
             Write-Warning -Message "Session '$SessionName' not found."
-            Exit
+            Break
         }
         Remove-PSSession -Name $SessionName
     }
