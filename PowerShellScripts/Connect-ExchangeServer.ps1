@@ -40,9 +40,9 @@ function Connect-ExchangeServer {
 
     Process {
         If ( $Credential ) {
-            $Session = New-PSSession -ConfigurationName 'Microsoft.Exchange' -ConnectionUri "http://$($Server)/PowerShell" -Authentication Kerberos -Credential $($Credential)
+            $Session = New-PSSession -Name "RemoteExchange" -ConfigurationName 'Microsoft.Exchange' -ConnectionUri "http://$($Server)/PowerShell" -Authentication Kerberos -Credential $($Credential)
         } else {
-            $Session = New-PSSession -ConfigurationName 'Microsoft.Exchange' -ConnectionUri "http://$($Server)/PowerShell" -Authentication Kerberos
+            $Session = New-PSSession -Name "RemoteExchange" -ConfigurationName 'Microsoft.Exchange' -ConnectionUri "http://$($Server)/PowerShell" -Authentication Kerberos
         }
         Import-PSSession -Session $Session
     }
