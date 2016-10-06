@@ -1,2 +1,8 @@
-.vscode
+# Visual Studio Core
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+
+# InProgress scripts
 InProgress
